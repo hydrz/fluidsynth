@@ -1,25 +1,8 @@
-# template.go
+# fluidsynth.go
 
 [![ci](https://github.com/hydrz/fluidsynth.go/actions/workflows/ci.yml/badge.svg)](https://github.com/hydrz/fluidsynth.go/actions/workflows/ci.yml)
 
->  Repository Template for Go Project
-
-
-## 工作流程 | Work flow
-
-1. 从模板创建仓库 | Create a new repository from template
-
-2. 使用 `make rename` 命令修改名称 | Use `make rename` to change go mod name
-
-2. 创建 dev 分支 | Create a dev branch from main
-
-3. 修改并提交代码 | Make changes to the code and commit
-
-4. 创建拉取请求 | Create Pull Request
-
-5. 创建标签 | Create a tag
-
-6. Github 工作流将自动生成发布版本 | Github Action will auto create release
+>  Fluidsynth bindings for Go
 
 ## 功能列表 | Features
 
@@ -37,11 +20,64 @@ go get github.com/hydrz/fluidsynth.go
 
 ## 使用说明 | Usage
 
-1.  xxxx
+```go
+package main
 
-2.  xxxx
+import (
+	"math"
+	"math/rand"
+	"time"
 
-3.  xxxx
+	"github.com/hydrz/fluidsynth.go/v2"
+)
+
+func main() {
+	// Create the settings
+	settings := fluidsynth.NewSettings()
+	if settings == nil {
+		panic("Failed to create the settings!")
+	}
+	defer settings.Delete()
+
+	// Change the settings
+	settings.Setstr("audio.driver", "alsa")
+
+	// Create the synthesizer
+	synth := fluidsynth.NewSynth(settings)
+	if synth == nil {
+		panic("Failed to create the synth!")
+	}
+	defer synth.Delete()
+
+	// Load a SoundFont and reset presets (so that new instruments get used from the SoundFont)
+	// Depending on the size of the SoundFont, this will take some time to complete...
+	sFontId := synth.SFLoad("example.sf2", true)
+
+	if sFontId == fluidsynth.FLUID_FAILED {
+		panic("Loading the SoundFont failed!")
+	}
+
+	audioDriver := fluidsynth.NewAudioDriver(settings, synth)
+	if audioDriver == nil {
+		panic("Failed to create the audio driver!")
+	}
+	defer audioDriver.Delete()
+
+	for i := 0; i < 12; i++ {
+		/* Generate a random key */
+		key := 60 + uint8(math.Ceil(12*rand.Float64()))
+
+		/* Play a note */
+		synth.NoteOn(0, key, 80)
+
+		/* Sleep for 1 second */
+		time.Sleep(1 * time.Second)
+
+		/* Stop the note */
+		synth.NoteOff(0, key)
+	}
+}
+```
 
 ## 贡献指南 | Contributing Guide
 
