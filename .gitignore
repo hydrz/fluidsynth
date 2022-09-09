@@ -1,6 +1,6 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,go,goland,macos,windows
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,linux,go,goland,macos,windows
+# Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,macos,linux,goland,go,vcpkg
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,macos,linux,goland,go,vcpkg
 
 ### Go ###
 # If you prefer the allow list template instead of the deny list, see community template:
@@ -142,7 +142,59 @@ fabric.properties
 # https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij
 .idea/**/azureSettings.xml
 
+### Linux ###
+*~
 
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
+### vcpkg ###
+# Vcpkg
+
+## Manifest Mode
+vcpkg_installed/
 
 ### VisualStudioCode ###
 .vscode/*
@@ -195,9 +247,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,go,goland,macos,windows
+# End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,macos,linux,goland,go,vcpkg
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
 # build files
 bin/
+example.sf2

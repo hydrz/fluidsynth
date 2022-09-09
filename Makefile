@@ -1,4 +1,4 @@
-MOD_NAME := github.com/hydrz/fluidsynth
+MOD_NAME := github.com/hydrz/fluidsynth.go
 
 # Git variables
 GIT_COMMIT    = $(shell git rev-parse HEAD)
