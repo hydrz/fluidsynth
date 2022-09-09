@@ -1,3 +1,3 @@
-module github.com/opensraph/template.go
+module github.com/hydrz/fluidsynth
 
 go 1.18

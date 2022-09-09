@@ -1,6 +1,6 @@
 # template.go
 
-[![ci](https://github.com/opensraph/template.go/actions/workflows/ci.yml/badge.svg)](https://github.com/opensraph/template.go/actions/workflows/ci.yml)
+[![ci](https://github.com/hydrz/fluidsynth/actions/workflows/ci.yml/badge.svg)](https://github.com/hydrz/fluidsynth/actions/workflows/ci.yml)
 
 >  Repository Template for Go Project
 
@@ -32,7 +32,7 @@
 ## 安装说明 | Installation
 
 ```bash
-go get github.com/opensraph/template.go
+go get github.com/hydrz/fluidsynth
 ```
 
 ## 使用说明 | Usage
@@ -57,7 +57,7 @@ go get github.com/opensraph/template.go
 
 ## 更新日志 | Changelog
 
-[![release](https://github.com/opensraph/template.go/actions/workflows/release.yml/badge.svg)](https://github.com/opensraph/template.go/releases)
+[![release](https://github.com/hydrz/fluidsynth/actions/workflows/release.yml/badge.svg)](https://github.com/hydrz/fluidsynth/releases)
 
 ## 版权文件 | License
 
